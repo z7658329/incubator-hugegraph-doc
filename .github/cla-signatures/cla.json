@@ -1,3 +1,12 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "imbajin",
+      "id": 17706099,
+      "comment_id": 1046584918,
+      "created_at": "2022-02-21T08:16:15Z",
+      "repoId": 137855319,
+      "pullRequestNo": 97
+    }
+  ]
 }
