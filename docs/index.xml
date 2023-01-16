@@ -1658,15 +1658,6 @@ HugeGraph supports multi-user parallel operations. Users can enter Gremlin query
 &lt;li>Feedback Email: &lt;a href="mailto:hugegraph@googlegroups.com">hugegraph@googlegroups.com&lt;/a>&lt;/li>
 &lt;li>WeChat public account: HugeGraph&lt;/li>
 &lt;/ul></description></item><item><title>Docs: HugeGraph 1.0.0 Release Notes</title><link>/docs/changelog/hugegraph-1.0.0-release-notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/changelog/hugegraph-1.0.0-release-notes/</guid><description>
-&lt;blockquote>
-&lt;p>TODO: update the summary soon, please check the detail in each repository first, thanks&lt;/p>
-&lt;/blockquote>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph/releases/tag/1.0.0">Server Release Note&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-toolchain/releases/tag/1.0.0">Toolchain Release Note&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-computer/releases/tag/1.0.0">Computer Release Note&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-commons/releases/tag/1.0.0">Commons Release Note&lt;/a>&lt;/li>
-&lt;/ul>
 &lt;h3 id="oltp-api--client-changes">OLTP API &amp;amp; Client Changes&lt;/h3>
 &lt;h4 id="api-changes">API Changes&lt;/h4>
 &lt;ul>
@@ -1687,8 +1678,9 @@ HugeGraph supports multi-user parallel operations. Users can enter Gremlin query
 &lt;li>feat(core): support adamic-adar &amp;amp; resource-allocation algorithms.&lt;/li>
 &lt;li>feat(hbase): support hash rowkey &amp;amp; pre-init tables.&lt;/li>
 &lt;li>feat(core): support query by Cypher language.&lt;/li>
-&lt;li>feat(core): support automatic management and failover for cluster role.&lt;/li>
+&lt;li>feat(core): support automatic management and fail-over for cluster role.&lt;/li>
 &lt;li>feat(core): support 16 OLAP algorithms, like: LPA, Louvain, PageRank, BetweennessCentrality, RingsDetect.&lt;/li>
+&lt;li>feat: prepare for Apache release.&lt;/li>
 &lt;/ul>
 &lt;h4 id="bug-fix">Bug Fix&lt;/h4>
 &lt;ul>
@@ -1706,7 +1698,7 @@ HugeGraph supports multi-user parallel operations. Users can enter Gremlin query
 &lt;li>fix: schema label race condition of addIndexLabel/removeIndexLabel.&lt;/li>
 &lt;li>fix: limit admin role can drop graph.&lt;/li>
 &lt;li>fix: ProfileApi url check &amp;amp; add build package to ignore file.&lt;/li>
-&lt;li>fix: can&amp;rsquo;t shutdown when starting with exception.&lt;/li>
+&lt;li>fix: can&amp;rsquo;t shut down when starting with exception.&lt;/li>
 &lt;li>fix: Traversal.graph is empty in StepStrategy.apply() with count().is(0).&lt;/li>
 &lt;li>fix: possible extra comma before where statement in MySQL backend.&lt;/li>
 &lt;li>fix: JNA UnsatisfiedLinkError for Apple M1.&lt;/li>
@@ -1715,7 +1707,7 @@ HugeGraph supports multi-user parallel operations. Users can enter Gremlin query
 &lt;li>fix: User-controlled data in numeric cast &amp;amp; remove word dependency.&lt;/li>
 &lt;li>fix: closing iterators on errors for Cassandra &amp;amp; Mysql.&lt;/li>
 &lt;/ul>
-&lt;h4 id="options-changes">Options Changes&lt;/h4>
+&lt;h4 id="option-changes">Option Changes&lt;/h4>
 &lt;ul>
 &lt;li>move &lt;code>raft.endpoint&lt;/code> option from graph scope to server scope.&lt;/li>
 &lt;/ul>
@@ -1729,11 +1721,11 @@ HugeGraph supports multi-user parallel operations. Users can enter Gremlin query
 &lt;li>chore: add logo in README &amp;amp; remove outdated log4j version.&lt;/li>
 &lt;li>refact(core): improve CachedGraphTransaction perf.&lt;/li>
 &lt;li>chore: update CI config &amp;amp; support ci robot &amp;amp; add codeQL SEC-check &amp;amp; graph option.&lt;/li>
-&lt;li>refact: ingore security check api &amp;amp; fix some bugs &amp;amp; clean code.&lt;/li>
+&lt;li>refact: ignore security check api &amp;amp; fix some bugs &amp;amp; clean code.&lt;/li>
 &lt;li>doc: enhance CONTRIBUTING.md &amp;amp; README.md.&lt;/li>
 &lt;li>refact: add checkstyle plugin &amp;amp; clean/format the code.&lt;/li>
 &lt;li>refact(core): improve decode string empty bytes &amp;amp; avoid array-construct columns in BackendEntry.&lt;/li>
-&lt;li>refact(cassandra): translate ipv4 to ipv6 metrics &amp;amp; update cassandra dependency vesion.&lt;/li>
+&lt;li>refact(cassandra): translate ipv4 to ipv6 metrics &amp;amp; update cassandra dependency version.&lt;/li>
 &lt;li>chore: use .asf.yaml for apache workflow &amp;amp; replace APPLICATION_JSON with TEXT_PLAIN.&lt;/li>
 &lt;li>feat: add system schema store.&lt;/li>
 &lt;li>refact(rocksdb): update rocksdb version to 6.22 &amp;amp; improve rocksdb code.&lt;/li>
@@ -1743,27 +1735,94 @@ HugeGraph supports multi-user parallel operations. Users can enter Gremlin query
 &lt;li>feat: support updateIfPresent/updateIfAbsent operation.&lt;/li>
 &lt;li>chore: modify abnormal logs &amp;amp; upgrade netty-all to 4.1.44.&lt;/li>
 &lt;li>refact: upgrade dependencies &amp;amp; adopt new analyzer &amp;amp; clean code.&lt;/li>
-&lt;li>chore: improve .gitignore &amp;amp; update ci configs &amp;amp; add RAT/faltten plugin.&lt;/li>
+&lt;li>chore: improve .gitignore &amp;amp; update ci configs &amp;amp; add RAT/flatten plugin.&lt;/li>
 &lt;li>chore(license): add dependencies-check ci &amp;amp; 3rd-party dependency licenses.&lt;/li>
 &lt;li>refact: Shutdown log when shutdown process &amp;amp; fix tx leak &amp;amp; enhance the file path.&lt;/li>
 &lt;li>refact: rename package to apache &amp;amp; dependency in all modules (Breaking Change).&lt;/li>
 &lt;li>chore: add license checker &amp;amp; update antrun plugin &amp;amp; fix building problem in windows.&lt;/li>
 &lt;li>feat: support one-step script for apache release v1.0.0 release.&lt;/li>
 &lt;/ul>
-&lt;h3 id="toolchain-changes">Toolchain Changes&lt;/h3>
+&lt;h3 id="computer-olap">Computer (OLAP)&lt;/h3>
+&lt;h4 id="algorithm-changes">Algorithm Changes&lt;/h4>
 &lt;ul>
-&lt;li>xx&lt;/li>
-&lt;li>xx&lt;/li>
+&lt;li>feat: implement page-rank algorithm.&lt;/li>
+&lt;li>feat: implement wcc algorithm.&lt;/li>
+&lt;li>feat: implement degree centrality.&lt;/li>
+&lt;li>feat: implement triangle_count algorithm.&lt;/li>
+&lt;li>feat: implement rings-detection algorithm.&lt;/li>
+&lt;li>feat: implement LPA algorithm.&lt;/li>
+&lt;li>feat: implement kcore algorithm.&lt;/li>
+&lt;li>feat: implement closeness centrality algorithm.&lt;/li>
+&lt;li>feat: implement betweenness centrality algorithm.&lt;/li>
+&lt;li>feat: implement cluster coefficient algorithm.&lt;/li>
 &lt;/ul>
-&lt;h3 id="computer-changes">Computer Changes&lt;/h3>
+&lt;h4 id="platform-changes">Platform Changes&lt;/h4>
 &lt;ul>
-&lt;li>xx&lt;/li>
-&lt;li>xx&lt;/li>
+&lt;li>feat: init module computer-core &amp;amp; computer-algorithm &amp;amp; etcd dependency.&lt;/li>
+&lt;li>feat: add Id as base type of vertex id.&lt;/li>
+&lt;li>feat: init Vertex/Edge/Properties &amp;amp; JsonStructGraphOutput.&lt;/li>
+&lt;li>feat: load data from hugegraph server.&lt;/li>
+&lt;li>feat: init basic combiner, Bsp4Worker, Bsp4Master.&lt;/li>
+&lt;li>feat: init sort &amp;amp; transport interface &amp;amp; basic FileInput/Output Stream.&lt;/li>
+&lt;li>feat: init computation &amp;amp; ComputerOutput/Driver interface.&lt;/li>
+&lt;li>feat: init Partitioner and HashPartitioner&lt;/li>
+&lt;li>feat: init Master/WorkerService module.&lt;/li>
+&lt;li>feat: init Heap/LoserTree sorting.&lt;/li>
+&lt;li>feat: init rpc module.&lt;/li>
+&lt;li>feat: init transport server, client, en/decode, flowControl, heartbeat.&lt;/li>
+&lt;li>feat: init DataDirManager &amp;amp; PointerCombiner.&lt;/li>
+&lt;li>feat: init aggregator module &amp;amp; add copy() and assign() methods to Value class.&lt;/li>
+&lt;li>feat: add startAsync and finishAsync on client side, add onStarted and onFinished on server side.&lt;/li>
+&lt;li>feat: init store/sort module.&lt;/li>
+&lt;li>feat: link managers in worker sending end.&lt;/li>
+&lt;li>feat: implement data receiver of worker.&lt;/li>
+&lt;li>feat: implement StreamGraphInput and EntryInput.&lt;/li>
+&lt;li>feat: add Sender and Receiver to process compute message.&lt;/li>
+&lt;li>feat: add seqfile fromat.&lt;/li>
+&lt;li>feat: add ComputeManager.&lt;/li>
+&lt;li>feat: add computer-k8s and computer-k8s-operator.&lt;/li>
+&lt;li>feat: add startup and make docker image code.&lt;/li>
+&lt;li>feat: sort different type of message use different combiner.&lt;/li>
+&lt;li>feat: add HDFS output format.&lt;/li>
+&lt;li>feat: mount config-map and secret to container.&lt;/li>
+&lt;li>feat: support java11.&lt;/li>
+&lt;li>feat: support partition concurrent compute.&lt;/li>
+&lt;li>refact: abstract computer-api from computer-core.&lt;/li>
+&lt;li>refact: optimize data receiving.&lt;/li>
+&lt;li>fix: release file descriptor after input and compute.&lt;/li>
+&lt;li>doc: add operator deploy readme.&lt;/li>
+&lt;li>feat: prepare for Apache release.&lt;/li>
 &lt;/ul>
-&lt;h3 id="commons-changes">Commons Changes&lt;/h3>
+&lt;h3 id="toolchain-loader-tools-hubble">Toolchain (loader, tools, hubble)&lt;/h3>
 &lt;ul>
-&lt;li>xx&lt;/li>
-&lt;li>xx&lt;/li>
+&lt;li>feat(loader): support use SQL to construct graph.&lt;/li>
+&lt;li>feat(loader): support Spark-Loader mode(include jdbc source).&lt;/li>
+&lt;li>feat(loader): support Flink-CDC mode.&lt;/li>
+&lt;li>fix(loader): fix NPE when loading ORC data.&lt;/li>
+&lt;li>fix(loader): fix schema is not cached with Spark/Flink mode.&lt;/li>
+&lt;li>fix(loader): fix json deserialize error.&lt;/li>
+&lt;li>fix(loader): fix jackson conflicts &amp;amp; missing dependencies.&lt;/li>
+&lt;li>feat(hubble): supplementary algorithms UI.&lt;/li>
+&lt;li>feat(hubble): support highlighting and hints for Gremlin text.&lt;/li>
+&lt;li>feat(hubble): add docker-file for hubble.&lt;/li>
+&lt;li>feat(hubble): display packaging log output progress while building.&lt;/li>
+&lt;li>fix(hubble): fix port-input placeholder UI.&lt;/li>
+&lt;li>feat: prepare for Apache release.&lt;/li>
+&lt;/ul>
+&lt;h3 id="commons-commonrpc">Commons (common,rpc)&lt;/h3>
+&lt;ul>
+&lt;li>feat: support assert-throws method returning Future.&lt;/li>
+&lt;li>feat: add Cnm and Anm to CollectionUtil.&lt;/li>
+&lt;li>feat: support custom content-type.&lt;/li>
+&lt;li>feat: prepare for Apache release.&lt;/li>
+&lt;/ul>
+&lt;h3 id="release-details">Release Details&lt;/h3>
+&lt;p>Please check the release details in each repository:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph/releases/tag/1.0.0">Server Release Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-toolchain/releases/tag/1.0.0">Toolchain Release Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-computer/releases/tag/1.0.0">Computer Release Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-commons/releases/tag/1.0.0">Commons Release Notes&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Schema API</title><link>/docs/clients/restful-api/schema/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/clients/restful-api/schema/</guid><description>
 &lt;h3 id="11-schema">1.1 Schema&lt;/h3>
 &lt;p>HugeGraph 提供单一接口获取某个图的全部 Schema 信息，包括：PropertyKey、VertexLabel、EdgeLabel 和 IndexLabel。&lt;/p>
@@ -7538,25 +7597,25 @@ Implement a class inherited from &lt;code>Formatter&lt;/code> in the directory, 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 3. Check the signature (make sure there is no Warning output, every source/binary file prompts Good Signature)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#Single file verification&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx-source.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx-binary.tar.gz &lt;span style="color:#8f5902;font-style:italic"># 注: 我们目前没有 binary 后缀&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#for loop traversal verification (recommended)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx-src.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx.tar.gz &lt;span style="color:#8f5902;font-style:italic"># Note: without the bin/binary suffix&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># One-click shell traversal verification (recommended)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">for&lt;/span> i in *.tar.gz&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$i&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> gpg --verify &lt;span style="color:#000">$i&lt;/span>.asc &lt;span style="color:#000">$i&lt;/span> &lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>First confirm the overall integrity/consistency, and then confirm the specific content (&lt;strong>key&lt;/strong>)&lt;/p>
 &lt;h4 id="4-check-the-archive-contents">4. Check the archive contents&lt;/h4>
 &lt;p>Here it is divided into two aspects: source code package + binary package, The source code package is stricter, it can be said that the core part (Because it is longer,For a complete list refer to the official &lt;a href="https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist">Wiki&lt;/a>)&lt;/p>
 &lt;p>First of all, we need to download the package from the apache official &lt;code>release-candidate&lt;/code> URL to the local (URL: &lt;a href="https://dist.apache.org/repos/dist/dev/incubator/hugegraph/">click to jump&lt;/a>)&lt;/p>
 &lt;h5 id="a-source-package">A. source package&lt;/h5>
-&lt;p>After decompressing &lt;code>xxx-hugegraph-source.tar.gz&lt;/code>, Do the following checks:&lt;/p>
+&lt;p>After decompressing &lt;code>*hugegraph*src.tar.gz&lt;/code>, Do the following checks:&lt;/p>
 &lt;ol>
 &lt;li>folders with &lt;code>incubating&lt;/code>, and no &lt;strong>empty&lt;/strong> files/folders&lt;/li>
-&lt;li>&lt;code>DISCLAIMER&lt;/code> file exists&lt;/li>
-&lt;li>&lt;code>LICENSE&lt;/code> + &lt;code>NOTICE&lt;/code> file exists and the content is normal&lt;/li>
-&lt;li>** does not exist ** any binaries&lt;/li>
-&lt;li>The source code files all contain the standard &lt;code>ASF License&lt;/code> header ((this can be done using a plugin))&lt;/li>
+&lt;li>&lt;code>LICENSE&lt;/code> + &lt;code>NOTICE&lt;/code> + &lt;code>DISCLAIM&lt;/code> file exists and the content is normal&lt;/li>
+&lt;li>&lt;strong>does not exist&lt;/strong> binaries (without LICENSE)&lt;/li>
+&lt;li>The source code files all contain the standard &lt;code>ASF License&lt;/code> header (this could be done with the Maven-MAT plugin)&lt;/li>
 &lt;li>Check whether the &lt;code>pom.xml&lt;/code> version number of each parent/child module is consistent (and meet expectations)&lt;/li>
 &lt;li>Check the first 3 to 5 commits, click to see if the modification is consistent with the source file&lt;/li>
-&lt;li>Finally, make sure the source code works/compiles correctly (then look at tests and specs)&lt;/li>
+&lt;li>Finally, make sure the source code works/compiles correctly&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># prefer to use/switch to java 11 for the following operations (compiling/running)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># java --version&lt;/span>
@@ -7587,7 +7646,7 @@ Implement a class inherited from &lt;code>Formatter&lt;/code> in the directory, 
 &lt;h4 id="5-check-the-official-website-and-github-and-other-pages">5. Check the official website and GitHub and other pages&lt;/h4>
 &lt;ol>
 &lt;li>Make sure that the official website at least meets &lt;a href="https://whimsy.apache.org/pods/project/hugegraph">apache website check&lt;/a>, and no circular links etc.&lt;/li>
-&lt;li>Update &lt;strong>download link&lt;/strong> and version update instructions&lt;/li>
+&lt;li>Update &lt;strong>download link&lt;/strong> and release notes updated&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
 &lt;/ol>
 &lt;h2 id="mail-template">Mail Template&lt;/h2>
@@ -10769,7 +10828,7 @@ batch_size_fail_threshold_in_kb: 1000
 &lt;li>page: 页号&lt;/li>
 &lt;/ul>
 &lt;p>以上参数都是可选的，如果提供page参数，必须提供limit参数，不允许带其他参数。&lt;code>label, properties&lt;/code>和&lt;code>limit&lt;/code>可以任意组合。&lt;/p>
-&lt;p>属性键值对由JSON格式的属性名称和属性值组成，允许多个属性键值对作为查询条件，属性值支持精确匹配和范围匹配，精确匹配时形如&lt;code>properties={&amp;quot;age&amp;quot;:29}&lt;/code>，范围匹配时形如&lt;code>properties={&amp;quot;age&amp;quot;:&amp;quot;P.gt(29)&amp;quot;}&lt;/code>,范围匹配支持的表达式如下：&lt;/p>
+&lt;p>属性键值对由JSON格式的属性名称和属性值组成，允许多个属性键值对作为查询条件，属性值支持精确匹配、范围匹配和模糊匹配，精确匹配时形如&lt;code>properties={&amp;quot;age&amp;quot;:29}&lt;/code>，范围匹配时形如&lt;code>properties={&amp;quot;age&amp;quot;:&amp;quot;P.gt(29)&amp;quot;}&lt;/code>，模糊匹配时形如&lt;code>properties={&amp;quot;city&amp;quot;: &amp;quot;P.textcontains(&amp;quot;ChengDu China&amp;quot;)}，&lt;/code>范围匹配支持的表达式如下：&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -11309,7 +11368,7 @@ batch_size_fail_threshold_in_kb: 1000
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;p>属性键值对由JSON格式的属性名称和属性值组成，允许多个属性键值对作为查询条件，属性值支持精确匹配和范围匹配，精确匹配时形如&lt;code>properties={&amp;quot;weight&amp;quot;:0.8}&lt;/code>，范围匹配时形如&lt;code>properties={&amp;quot;age&amp;quot;:&amp;quot;P.gt(0.8)&amp;quot;}&lt;/code>,范围匹配支持的表达式如下：&lt;/p>
+&lt;p>属性键值对由JSON格式的属性名称和属性值组成，允许多个属性键值对作为查询条件，属性值支持精确匹配、范围匹配和模糊匹配，精确匹配时形如&lt;code>properties={&amp;quot;weight&amp;quot;:0.8}&lt;/code>，范围匹配时形如&lt;code>properties={&amp;quot;age&amp;quot;:&amp;quot;P.gt(0.8)&amp;quot;}&lt;/code>，模糊匹配时形如&lt;code>properties={&amp;quot;city&amp;quot;: &amp;quot;P.textcontains(&amp;quot;ChengDu China&amp;quot;)}&lt;/code>，范围匹配支持的表达式如下：&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>

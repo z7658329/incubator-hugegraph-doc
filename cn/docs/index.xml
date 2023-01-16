@@ -1557,15 +1557,6 @@ HugeGraph支持多用户并行操作，用户可输入Gremlin查询语句，并�
 &lt;li>反馈邮箱：&lt;a href="mailto:hugegraph@googlegroups.com">hugegraph@googlegroups.com&lt;/a>&lt;/li>
 &lt;li>微信公众号：HugeGraph&lt;/li>
 &lt;/ul></description></item><item><title>Docs: HugeGraph 1.0.0 Release Notes</title><link>/cn/docs/changelog/hugegraph-1.0.0-release-notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cn/docs/changelog/hugegraph-1.0.0-release-notes/</guid><description>
-&lt;blockquote>
-&lt;p>TODO: update the summary soon, please check the detail in each repository first, thanks&lt;/p>
-&lt;/blockquote>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph/releases/tag/1.0.0">Server Release Note&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-toolchain/releases/tag/1.0.0">Toolchain Release Note&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-computer/releases/tag/1.0.0">Computer Release Note&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-commons/releases/tag/1.0.0">Commons Release Note&lt;/a>&lt;/li>
-&lt;/ul>
 &lt;h3 id="oltp-api--client-更新">OLTP API &amp;amp; Client 更新&lt;/h3>
 &lt;h4 id="apiclient-接口更新">API/Client 接口更新&lt;/h4>
 &lt;ul>
@@ -1584,7 +1575,7 @@ HugeGraph支持多用户并行操作，用户可输入Gremlin查询语句，并�
 &lt;li>支持 Cypher 图查询语言。&lt;/li>
 &lt;li>支持集群 Master 角色的自动管理与故障转移。&lt;/li>
 &lt;li>支持 16 个 OLAP 算法, 包括：LPA, Louvain, PageRank, BetweennessCentrality, RingsDetect等。&lt;/li>
-&lt;li>根据 Apache 基金会对项目的发版要求进行适配，包括 License 合规性、发版流程、代码风格等。&lt;/li>
+&lt;li>根据 Apache 基金会对项目的发版要求进行适配，包括 License 合规性、发版流程、代码风格等，支持 Apache 版本发布。&lt;/li>
 &lt;/ul>
 &lt;h4 id="bug-修复">Bug 修复&lt;/h4>
 &lt;ul>
@@ -1625,11 +1616,11 @@ HugeGraph支持多用户并行操作，用户可输入Gremlin查询语句，并�
 &lt;li>chore: add logo in README &amp;amp; remove outdated log4j version.&lt;/li>
 &lt;li>refact(core): improve CachedGraphTransaction perf.&lt;/li>
 &lt;li>chore: update CI config &amp;amp; support ci robot &amp;amp; add codeQL SEC-check &amp;amp; graph option.&lt;/li>
-&lt;li>refact: ingore security check api &amp;amp; fix some bugs &amp;amp; clean code.&lt;/li>
+&lt;li>refact: ignore security check api &amp;amp; fix some bugs &amp;amp; clean code.&lt;/li>
 &lt;li>doc: enhance CONTRIBUTING.md &amp;amp; README.md.&lt;/li>
 &lt;li>refact: add checkstyle plugin &amp;amp; clean/format the code.&lt;/li>
 &lt;li>refact(core): improve decode string empty bytes &amp;amp; avoid array-construct columns in BackendEntry.&lt;/li>
-&lt;li>refact(cassandra): translate ipv4 to ipv6 metrics &amp;amp; update cassandra dependency vesion.&lt;/li>
+&lt;li>refact(cassandra): translate ipv4 to ipv6 metrics &amp;amp; update cassandra dependency version.&lt;/li>
 &lt;li>chore: use .asf.yaml for apache workflow &amp;amp; replace APPLICATION_JSON with TEXT_PLAIN.&lt;/li>
 &lt;li>feat: add system schema store.&lt;/li>
 &lt;li>refact(rocksdb): update rocksdb version to 6.22 &amp;amp; improve rocksdb code.&lt;/li>
@@ -1639,27 +1630,94 @@ HugeGraph支持多用户并行操作，用户可输入Gremlin查询语句，并�
 &lt;li>feat: support updateIfPresent/updateIfAbsent operation.&lt;/li>
 &lt;li>chore: modify abnormal logs &amp;amp; upgrade netty-all to 4.1.44.&lt;/li>
 &lt;li>refact: upgrade dependencies &amp;amp; adopt new analyzer &amp;amp; clean code.&lt;/li>
-&lt;li>chore: improve .gitignore &amp;amp; update ci configs &amp;amp; add RAT/faltten plugin.&lt;/li>
+&lt;li>chore: improve .gitignore &amp;amp; update ci configs &amp;amp; add RAT/flatten plugin.&lt;/li>
 &lt;li>chore(license): add dependencies-check ci &amp;amp; 3rd-party dependency licenses.&lt;/li>
 &lt;li>refact: Shutdown log when shutdown process &amp;amp; fix tx leak &amp;amp; enhance the file path.&lt;/li>
 &lt;li>refact: rename package to apache &amp;amp; dependency in all modules (Breaking Change).&lt;/li>
 &lt;li>chore: add license checker &amp;amp; update antrun plugin &amp;amp; fix building problem in windows.&lt;/li>
 &lt;li>feat: support one-step script for apache release v1.0.0 release.&lt;/li>
 &lt;/ul>
-&lt;h3 id="toolchain-更新">Toolchain 更新&lt;/h3>
+&lt;h3 id="computer-olap">Computer (OLAP)&lt;/h3>
+&lt;h4 id="algorithm-changes">Algorithm Changes&lt;/h4>
 &lt;ul>
-&lt;li>xx&lt;/li>
-&lt;li>xx&lt;/li>
+&lt;li>支持 PageRank 算法。&lt;/li>
+&lt;li>支持 WCC 算法。&lt;/li>
+&lt;li>支持 degree centrality 算法。&lt;/li>
+&lt;li>支持 triangle count 算法。&lt;/li>
+&lt;li>支持 rings detection 算法。&lt;/li>
+&lt;li>支持 LPA 算法。&lt;/li>
+&lt;li>支持 k-core 算法。&lt;/li>
+&lt;li>支持 closeness centrality 算法。&lt;/li>
+&lt;li>支持 betweenness centrality 算法。&lt;/li>
+&lt;li>支持 cluster coefficient 算法。&lt;/li>
 &lt;/ul>
-&lt;h3 id="computer-更新">Computer 更新&lt;/h3>
+&lt;h4 id="platform-changes">Platform Changes&lt;/h4>
 &lt;ul>
-&lt;li>xx&lt;/li>
-&lt;li>xx&lt;/li>
+&lt;li>feat: init module computer-core &amp;amp; computer-algorithm &amp;amp; etcd dependency.&lt;/li>
+&lt;li>feat: add Id as base type of vertex id.&lt;/li>
+&lt;li>feat: init Vertex/Edge/Properties &amp;amp; JsonStructGraphOutput.&lt;/li>
+&lt;li>feat: load data from hugegraph server.&lt;/li>
+&lt;li>feat: init basic combiner, Bsp4Worker, Bsp4Master.&lt;/li>
+&lt;li>feat: init sort &amp;amp; transport interface &amp;amp; basic FileInput/Output Stream.&lt;/li>
+&lt;li>feat: init computation &amp;amp; ComputerOutput/Driver interface.&lt;/li>
+&lt;li>feat: init Partitioner and HashPartitioner&lt;/li>
+&lt;li>feat: init Master/WorkerService module.&lt;/li>
+&lt;li>feat: init Heap/LoserTree sorting.&lt;/li>
+&lt;li>feat: init rpc module.&lt;/li>
+&lt;li>feat: init transport server, client, en/decode, flowControl, heartbeat.&lt;/li>
+&lt;li>feat: init DataDirManager &amp;amp; PointerCombiner.&lt;/li>
+&lt;li>feat: init aggregator module &amp;amp; add copy() and assign() methods to Value class.&lt;/li>
+&lt;li>feat: add startAsync and finishAsync on client side, add onStarted and onFinished on server side.&lt;/li>
+&lt;li>feat: init store/sort module.&lt;/li>
+&lt;li>feat: link managers in worker sending end.&lt;/li>
+&lt;li>feat: implement data receiver of worker.&lt;/li>
+&lt;li>feat: implement StreamGraphInput and EntryInput.&lt;/li>
+&lt;li>feat: add Sender and Receiver to process compute message.&lt;/li>
+&lt;li>feat: add seqfile fromat.&lt;/li>
+&lt;li>feat: add ComputeManager.&lt;/li>
+&lt;li>feat: add computer-k8s and computer-k8s-operator.&lt;/li>
+&lt;li>feat: add startup and make docker image code.&lt;/li>
+&lt;li>feat: sort different type of message use different combiner.&lt;/li>
+&lt;li>feat: add HDFS output format.&lt;/li>
+&lt;li>feat: mount config-map and secret to container.&lt;/li>
+&lt;li>feat: support java11.&lt;/li>
+&lt;li>feat: support partition concurrent compute.&lt;/li>
+&lt;li>refact: abstract computer-api from computer-core.&lt;/li>
+&lt;li>refact: optimize data receiving.&lt;/li>
+&lt;li>fix: release file descriptor after input and compute.&lt;/li>
+&lt;li>doc: add operator deploy readme.&lt;/li>
+&lt;li>feat: prepare for Apache release.&lt;/li>
 &lt;/ul>
-&lt;h3 id="commons-更新">Commons 更新&lt;/h3>
+&lt;h3 id="toolchain-loader-tools-hubble">Toolchain (loader, tools, hubble)&lt;/h3>
 &lt;ul>
-&lt;li>xx&lt;/li>
-&lt;li>xx&lt;/li>
+&lt;li>支持 Loader 使用 SQL 格式来选取从关系数据库导入哪些数据。&lt;/li>
+&lt;li>支持 Loader 从 Spark 导入数据（包括 JDBC 方式）。&lt;/li>
+&lt;li>支持 Loader 增加 Flink-CDC 模式。&lt;/li>
+&lt;li>解决 Loader 导入 ORC 格式数据时，报错 NPE。&lt;/li>
+&lt;li>解决 Loader 在 Spark/Flink 模式时未缓存 Schema 的问题。&lt;/li>
+&lt;li>解决 Loader 的 Json 反序列化问题。&lt;/li>
+&lt;li>解决 Loader 的 Jackson 版本冲突与依赖问题。&lt;/li>
+&lt;li>支持 Hubble 高级算法接口的 UI 界面。&lt;/li>
+&lt;li>支持 Hubble 中 Gremlin 语句的高亮格式显示.&lt;/li>
+&lt;li>支持 Hubble 使用 Docker 镜像部署。&lt;/li>
+&lt;li>支持 输出构建日志。&lt;/li>
+&lt;li>解决 Hubble 的端口输入框问题。&lt;/li>
+&lt;li>支持 Apache 项目发版的适配。&lt;/li>
+&lt;/ul>
+&lt;h3 id="commons-commonrpc">Commons (common,rpc)&lt;/h3>
+&lt;ul>
+&lt;li>支持 assert-throws 方法返回 Future。&lt;/li>
+&lt;li>增加 Cnm 与 Anm 方法到 CollectionUtil 中。&lt;/li>
+&lt;li>支持 用户自定义的 content-type。&lt;/li>
+&lt;li>支持 Apache 项目发版的适配。&lt;/li>
+&lt;/ul>
+&lt;h3 id="release-details">Release Details&lt;/h3>
+&lt;p>更加详细的版本变更信息，可以查看各个子仓库的链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph/releases/tag/1.0.0">Server Release Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-toolchain/releases/tag/1.0.0">Toolchain Release Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-computer/releases/tag/1.0.0">Computer Release Notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/apache/incubator-hugegraph-commons/releases/tag/1.0.0">Commons Release Notes&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Schema API</title><link>/cn/docs/clients/restful-api/schema/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cn/docs/clients/restful-api/schema/</guid><description>
 &lt;h3 id="11-schema">1.1 Schema&lt;/h3>
 &lt;p>HugeGraph 提供单一接口获取某个图的全部 Schema 信息，包括：PropertyKey、VertexLabel、EdgeLabel 和 IndexLabel。&lt;/p>
@@ -8054,7 +8112,7 @@ auth.user_tokens=[hugegraph1:token-value-1, hugegraph2:token-value-2]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 3. 下载 hugegraph-svn 目录 (版本号注意填写此次验证版本, 这里以1.0.0为例)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>svn co https://dist.apache.org/repos/dist/dev/incubator/hugegraph/1.0.0/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># (注) 如果出现 svn 下载某个文件速度很慢的情况, 可以考虑 wget 单个文件下载, 如下 (或考虑使用代理)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># (注) 如果出现 svn 下载某个文件速度很慢的情况, 可以考虑 wget 单个文件下载, 如下 (或考虑使用 VPN / 代理)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://dist.apache.org/repos/dist/dev/incubator/hugegraph/1.0.0/apache-hugegraph-toolchain-incubating-1.0.0.tar.gz
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="2-检查-hash-值">2. 检查 hash 值&lt;/h4>
 &lt;p>首先需要检查 &lt;code>source + binary&lt;/code> 包的文件完整性, 通过 &lt;code>shasum&lt;/code> 进行校验, 确保和发布到 apache/github 上的 hash 值一致 (一般是 sha512)&lt;/p>
@@ -8084,25 +8142,25 @@ auth.user_tokens=[hugegraph1:token-value-1, hugegraph2:token-value-2]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 3. 检查签名(确保没有 Warning 输出, 每一个 source/binary 文件都提示 Good Signature)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#单个文件验证&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx-source.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx-binary.tar.gz &lt;span style="color:#8f5902;font-style:italic"># 注: 我们目前没有 binary 后缀&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#for循环遍历验证(推荐使用)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx-src.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gpg --verify xx.asc xxx.tar.gz &lt;span style="color:#8f5902;font-style:italic"># 注：目前没有 bin/binary 后缀&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 一行脚本快速验证所有包 (推荐使用，请确保所有 gpg 公钥已经信任)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">for&lt;/span> i in *.tar.gz&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#000">$i&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> gpg --verify &lt;span style="color:#000">$i&lt;/span>.asc &lt;span style="color:#000">$i&lt;/span> &lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>先确认了整体的&amp;quot;完整性 + 一致性&amp;quot;, 然后接下来确认具体的内容 (&lt;strong>关键&lt;/strong>)&lt;/p>
 &lt;h4 id="4-检查压缩包内容">4. 检查压缩包内容&lt;/h4>
 &lt;p>这里分源码包 + 二进制包两个方面, 源码包更为严格, 挑核心的部分说 (完整的列表可参考官方 &lt;a href="https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist">Wiki&lt;/a>, 比较长)&lt;/p>
 &lt;p>首先我们需要从 apache 官方的 &lt;code>release-candidate&lt;/code> 地址下载包到本地 (地址: &lt;a href="https://dist.apache.org/repos/dist/dev/incubator/hugegraph/">点击跳转&lt;/a>)&lt;/p>
 &lt;h5 id="a-源码包">A. 源码包&lt;/h5>
-&lt;p>解压 &lt;code>xxx-hugegraph-source.tar.gz&lt;/code>后, 进行如下检查:&lt;/p>
+&lt;p>解压 &lt;code>*hugegraph*src.tar.gz&lt;/code>后, 进行如下检查:&lt;/p>
 &lt;ol>
 &lt;li>文件夹都带有 &lt;code>incubating&lt;/code>, 且不存在&lt;strong>空的&lt;/strong>文件/文件夹&lt;/li>
-&lt;li>存在&lt;code>DISCLAIMER&lt;/code>文件&lt;/li>
-&lt;li>存在 &lt;code>LICENSE&lt;/code> + &lt;code>NOTICE&lt;/code> 文件并且内容正常&lt;/li>
-&lt;li>&lt;strong>不存在&lt;/strong>任何二进制文件&lt;/li>
+&lt;li>存在 &lt;code>LICENSE&lt;/code> + &lt;code>NOTICE&lt;/code> + 存在 &lt;code>DISCLAIMER&lt;/code> 文件并且内容正常&lt;/li>
+&lt;li>&lt;strong>不存在&lt;/strong> 缺乏 License 的二进制文件&lt;/li>
 &lt;li>源码文件都包含标准 &lt;code>ASF License&lt;/code> 头 (这个用插件跑一下为主)&lt;/li>
-&lt;li>检查每个父/子模块的 &lt;code>pom.xml&lt;/code> 版本号是否一致 (且符合期望)&lt;/li>
-&lt;li>检查前 3 ~ 5 个 commit 提交, 点进去看看是否修改处和源码文件一致&lt;/li>
-&lt;li>最后, 确保源码可以正常/正确编译 (然后看看测试和规范)&lt;/li>
+&lt;li>检查每个父 / 子模块的 &lt;code>pom.xml&lt;/code> 版本号是否一致 (且符合期望)&lt;/li>
+&lt;li>检查前 3 ~ 5 个 commit 提交，点进去看看是否修改处和源码文件一致&lt;/li>
+&lt;li>最后，确保源码可以正常 / 正确编译 (然后看看测试和规范)&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 请优先使用/切换到 java 11 版本进行后序的编译和运行操作&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># java --version&lt;/span>
@@ -8133,7 +8191,7 @@ auth.user_tokens=[hugegraph1:token-value-1, hugegraph2:token-value-2]
 &lt;h4 id="5-检查官网以及-github-等页面">5. 检查官网以及 github 等页面&lt;/h4>
 &lt;ol>
 &lt;li>确保官网至少满足 &lt;a href="https://whimsy.apache.org/pods/project/hugegraph">apache website check&lt;/a>, 以及没有死链等&lt;/li>
-&lt;li>更新&lt;strong>下载链接&lt;/strong>以及版本更新说明&lt;/li>
+&lt;li>更新&lt;strong>下载链接&lt;/strong>存在, 以及版本更新说明页面更新&lt;/li>
 &lt;li>&amp;hellip;&lt;/li>
 &lt;/ol>
 &lt;h2 id="邮件模板">邮件模板&lt;/h2>
